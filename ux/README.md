@@ -50,7 +50,7 @@ después requieren ver cuantas estudiantes se encuentran activas, y su avance ge
  Después se realizaron los sketches en baja calidad (lápiz y papel),
  para poder visualizar cómo sería el ideal de nuestro sitio web.
 
-![inicio](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/inicio.jpg)
+![inicio](https://github.com/Alterna87/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/inicio.jpg)
 ![usuario-incorrecto](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/usuario-incorrecto.jpg)
 
 ![seleccion-sede](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/seleccion-sede.jpg)
