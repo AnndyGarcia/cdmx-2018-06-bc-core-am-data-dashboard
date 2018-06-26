@@ -51,10 +51,10 @@ después requieren ver cuantas estudiantes se encuentran activas, y su avance ge
  para poder visualizar cómo sería el ideal de nuestro sitio web.
 
 ![inicio](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/inicio.jpg)
-![usuario-incorrecto](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/usuario-incorrecto.jpg)
+![usuario-incorrecto](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/usuario-incorrecto.jpg)
 
-![seleccion-sede](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/seleccion-sede.jpg)
-![seleccion-generacion](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/seleccion-generacion.jpg)
+![seleccion-sede](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/seleccion-sede.jpg)
+![seleccion-generacion](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/seleccion-generacion.jpg)
 
 Procedimos a realizar los sketches en alta fidelidad, utilizamos el programa *Mockups* para realizar maquetados tanto de web design como en mobile.
 
@@ -62,18 +62,18 @@ Cuando tuvimos los sketches finales, le enseñamos el prototipo a Lucile, nos di
 
 ### Mobile
 
-![pantalla-inicio](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/pantalla-inicio.jpg)
-![pantalla-inicio-error](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/pantalla-inicio-error.jpg)
+![pantalla-inicio](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/pantalla-inicio.jpg)
+![pantalla-inicio-error](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/pantalla-inicio-error.jpg)
 
-![sede-generacion](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-generacion.jpg)
-![listado-alumnas](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas.jpg)
+![sede-generacion](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-generacion.jpg)
+![listado-alumnas](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas.jpg)
 
-![listado-alumnas-opciones](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas-detalle.jpg)
+![listado-alumnas-opciones](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas-detalle.jpg)
 
 ### Web design
 
-![inicio-web](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/inicio-web.jpg)
-![sesion-error](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sesion-error.jpg)
+![inicio-web](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/inicio-web.jpg)
+![sesion-error](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sesion-error.jpg)
 
-![sede-web](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-web.jpg)
-![alumnas](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/alumnas.jpg)
+![sede-web](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-web.jpg)
+![alumnas](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/alumnas.jpg)
