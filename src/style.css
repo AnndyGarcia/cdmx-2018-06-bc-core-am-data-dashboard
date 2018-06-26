@@ -1,0 +1,33 @@
+header {
+  background: gray;
+  opacity: 0.9;
+  filter: alpha(opacity=60);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-family: 'Advent Pro', sans-serif;
+}
+* {
+  font-family: 'Advent Pro', sans-serif;
+}
+nav {
+  float: left;
+}
+
+
+a {
+  color: white !important;
+}
+
+.backyellow {
+  background-color: #ffc107d9;
+  opacity: 0.9;
+  filter: alpha(opacity=60);
+
+}
+.desepear {
+  display: none;
+}
+
+label {
+  font-size: 32px;
+}
