@@ -68,7 +68,7 @@ Cuando tuvimos los sketches finales, le enseñamos el prototipo a Lucile, nos di
 ![sede-generacion](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-generacion.jpg)
 ![listado-alumnas](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas.jpg)
 
-![listado-alumnas-opciones](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/listado-alumnas-detalle.jpg)
+![listado-alumnas-opciones](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/blob/master/ux/readme-images/listado-alumnas-detalle.jpg)
 
 ### Web design
 
