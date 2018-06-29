@@ -1,3 +1,7 @@
+body {
+  font-family: 'Advent Pro', sans-serif;
+
+}
 header {
   background: gray;
   opacity: 0.9;
@@ -6,28 +10,37 @@ header {
   margin-bottom: 5px;
   font-family: 'Advent Pro', sans-serif;
 }
-* {
-  font-family: 'Advent Pro', sans-serif;
-}
-nav {
-  float: left;
-}
 
+.text-right {
+  text-align: right;
 
-a {
-  color: white !important;
 }
 
+.container-fluid {
+  background-color: #fafafa;
+}
 .backyellow {
-  background-color: #ffc107d9;
+  background-color: #ffc107d9 !important;
   opacity: 0.9;
   filter: alpha(opacity=60);
+  color: #333333 !important;
 
+
+}
+.position-right {
+  float: right;
 }
 .desepear {
   display: none;
 }
 
+#generaciones {
+  margin-top: 5px;
+}
 label {
   font-size: 32px;
+}
+
+.black {
+  color: #333333 !important;
 }

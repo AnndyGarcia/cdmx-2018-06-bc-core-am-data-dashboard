@@ -11,11 +11,15 @@ const fillSelect = ()=> {
         for (let i = 0; i < Object.keys(data).length; i++) {
         sedes.options[i] = new Option(Object.keys(data)[i]);
         }
+        for (var i = 0; i < Object.keys(data.mexico.generacion).length; i++) {
+          generaciones.options[i] = new Option(Object.keys(data.mexico.generacion)[i]);
+}
         sedeGeneracion = sedes.selectedIndex;
         console.log(sedeGeneracion);
         sedes.addEventListener('change', generacion =()=> {
         let sedeGeneracion= sedes.value;
         let generaciones = document.getElementById('generaciones');
+
         switch (sedeGeneracion) {
 
           case 'lima':
