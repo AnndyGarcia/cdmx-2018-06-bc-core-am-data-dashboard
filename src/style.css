@@ -11,18 +11,24 @@ header {
 h3 {
   padding: 2px;
 }
-p {
-    font-size: 12px;
-    font-weight: bold;
-    padding:
-}
-.white {
-  color: white;
-}
 .container-fluid {
   background-color: #f1eeea !important;
+font-family: 'Exo 2', sans-serif;
   height: 100vh
 }
+h2{
+  padding: 10px;
+}
+
+
+label {
+  color:  #333333 !important;
+
+}
+.white {
+  color: white !important;
+}
+
 
 .allscreen {
   height: 90vh;
@@ -43,13 +49,34 @@ p {
   display: none;
 }
 
-#generaciones {
-  margin-top: 5px;
-}
 .subtitulo {
   font-size: 32px;
 }
 
 .black {
   color: #333333 !important;
+}
+
+.pink {
+background-color: #FF009E !important;
+}
+
+.size-a {
+  font-size: 20px !important;
+
+}
+.bold {
+  font-weight: bold !important;
+  font-size: 18px;
+
+}
+
+.advanceLMS {
+  color: #ffc107d9;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.left {
+    margin-left: 21.666667% !important;
 }
