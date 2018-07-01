@@ -21,6 +21,7 @@ p {
 }
 .container-fluid {
   background-color: #f1eeea !important;
+  height: 100vh
 }
 
 .allscreen {
@@ -45,7 +46,7 @@ p {
 #generaciones {
   margin-top: 5px;
 }
-label {
+.subtitulo {
   font-size: 32px;
 }
 

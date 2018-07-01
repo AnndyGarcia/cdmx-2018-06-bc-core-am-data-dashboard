@@ -11,37 +11,35 @@
   </head>
   <body>
   <div class="container-fluid">
-  <header class="row">
-    <h1>Data Dashboard by Laboratoria</h1>
-    <section class="col-1 offset-11 white">
+  <header class="row backyellow">
+    <h1>Data Dashboard</h1>
+    <section class="col-1 offset-11">
     Hola Lucile <br>
     Sede CDMX
   </section>
   </header>
-  <!--  mENU VERTICAL -->
-<aside class="col-xl-2 col-2 position-right">
+  <section class="row allscreen">
+  <!--  ASIDE -->
+<aside class="col-xl-2 col-2 position-left">
 <ul class="list-group">
   <a href="#" class="list-group-item active backyellow">REPORTES</a>
   <a href="#" class="list-group-item black">SEDES</a>
   <a href="#" class="list-group-item black">LABORATORIANS</a>
 </ul>
   </aside>
-
-
-<!-- Contenedor de busquedas-->
-<section class="col-xl-10 col-10 row backyellow">
-<label class="col-2" for="selectsingle">Generacion </label> <select id="generaciones" class="form-control col-4">
+<!-- SEARCH CONTAINER-->
+<section class="col-xl-9 col-10 border position-right form-control">
+<label class="subtitulo" >Generacion </label> <select id="generaciones" class="col-4">
   </select>
-  <article class="col-2 offset-4 ">
-  <label class="">Alumnas</label><label id="acount">15</label>
-  </article>
-      </section>
+
+
+  <label class="col-2 offset-3">Alumnas</label><label id="acount">15</label>
+  </section>
     <section class="col-10">
 <article class="desepear"><label for="selectsingle">Sede </label> <select id="sedes" class="form-control col-6"></select>
 </article>
   </section>
-  </div>
-
+  </section>
     <script src="main.js"></script>
     <script src="data.js"></script>
   </div>
