@@ -3,21 +3,28 @@ body {
 
 }
 header {
-  background: gray;
-  opacity: 0.9;
-  filter: alpha(opacity=60);
+  background-color: gray;
   padding-bottom: 5px;
   margin-bottom: 5px;
   font-family: 'Advent Pro', sans-serif;
 }
-
-.text-right {
-  text-align: right;
-
+h3 {
+  padding: 2px;
+}
+p {
+    font-size: 12px;
+    font-weight: bold;
+    padding:
+}
+.white {
+  color: white;
+}
+.container-fluid {
+  background-color: #f1eeea !important;
 }
 
-.container-fluid {
-  background-color: #fafafa;
+.allscreen {
+  height: 90vh;
 }
 .backyellow {
   background-color: #ffc107d9 !important;
@@ -29,6 +36,7 @@ header {
 }
 .position-right {
   float: right;
+  margin-right: 3px;
 }
 .desepear {
   display: none;
