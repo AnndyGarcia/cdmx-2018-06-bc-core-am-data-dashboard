@@ -3,7 +3,31 @@ window.computeStudentsStats = (laboratoria) => {
 
 }
 
+
 window.computeGenerationsStats = (laboratoria) => {
+
+    let campus = document.getElementById('selectede').value;
+    let generation = document.getElementById('generaciones').value;
+    count = laboratoria[campus].generacion[generation].estudiantes.length;
+    let average = 0;
+    let arr = {
+        "generation" : []
+    }
+    //console.log(count);
+    for (let i in laboratoria[campus].generacion[generation].estudiantes){
+      average += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.porcentajeCompletado);
+      }
+  average = Math.round((average / count));
+  //console.log(average)
+arr.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
+
+return arr.generation[0];
+
+}
+
+
+ //termina window
+/*window.computeGenerationsStats = (laboratoria) => {
     const generationsArray = [];
     let array2 = [];
     let average = 0;
@@ -30,7 +54,7 @@ window.computeGenerationsStats = (laboratoria) => {
         })
     }
     return generationsArray
-}
+} */
 
 window.sortStudents = (students, orderBy, orderDirection) =>{
 
