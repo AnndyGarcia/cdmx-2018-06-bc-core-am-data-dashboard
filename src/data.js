@@ -1,72 +1,41 @@
 
-//window.data = {
+window.computeStudentsStats = (laboratoria) => {
 
-const fillSelect = ()=> {
-    let link = "https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json";
-       fetch(link).then(function(datos){
-          //console.log(datos);
-        return datos.json();
-        }).then(function(data){
-        let sedes = document.getElementById('sedes')
-        for (let i = 0; i < Object.keys(data).length; i++) {
-        sedes.options[i] = new Option(Object.keys(data)[i]);
-        }
-        for (var i = 0; i < Object.keys(data.mexico.generacion).length; i++) {
-          generaciones.options[i] = new Option(Object.keys(data.mexico.generacion)[i]);
 }
-        sedeGeneracion = sedes.selectedIndex;
-        console.log(sedeGeneracion);
-        sedes.addEventListener('change', generacion =()=> {
-        let sedeGeneracion= sedes.value;
-        let generaciones = document.getElementById('generaciones');
 
-        switch (sedeGeneracion) {
-
-          case 'lima':
-          for (var i = 0; i < Object.keys(data.lima.generacion).length; i++) {
-            generaciones.options[i] = new Option(Object.keys(data.lima.generacion)[i]);
-          }
-          case 'mexico':
-          for (var i = 0; i < Object.keys(data.mexico.generacion).length; i++) {
-            generaciones.options[i] = new Option(Object.keys(data.mexico.generacion)[i]);
-}
-          case 'santiago':
-          for (var i = 0; i < Object.keys(data.santiago.generacion).length; i++) {
-          generaciones.options[i] = new Option(Object.keys(data.santiago.generacion)[i]);
-}
-            break;
-          default:
-        }
-
-      /*  for (let i = 0; i < data.sedeGeneracion.length; i++) {
-
-      }*/
+window.computeGenerationsStats = (laboratoria) => {
+    const generationsArray = [];
+    let array2 = [];
+    let average = 0;
+    let campus='';
+    let generation ='';
+    for (key in laboratoria) {
+        campus = key;
+        average = 0;
+        let generations = Object.keys(laboratoria[key].generacion);
+        generations.map((generation) => {
+            generation = generation;
+            const students = laboratoria[key].generacion[generation].estudiantes;
+            array2 = students.map((student, i, array) =>{
+                average += array[i].progreso.porcentajeCompletado;
+                average = Math.round(average / array.length);
+                return {
+                    'campus' : key,
+                    'generation' : generation,
+                    'average' : average,
+                    'count': array.length
+                }
+            })
+            generationsArray.push(array2)
         })
-        /*for (let i = 0; i < data.sedeGeneracion.length; i++) {
-          array[i]
-        */
-        //console.log(sedes.value);
+    }
+    return generationsArray
+}
 
+window.sortStudents = (students, orderBy, orderDirection) =>{
 
-      });
-      }
+}
 
+window.filterStudents = (students, search) =>{
 
-fillSelect();
-
-//};
-//fillSelect();
-
-
-
-
-
-/*sedes.addEventListener("click", sede =()=> {
-let c = document.createElement("option");
-
-
-//  sedes.options[0] = new Option();
-//alert("Click");
-//Object.keys(data).length
-//7Object.keys(data)[0]
-});*/
+}
