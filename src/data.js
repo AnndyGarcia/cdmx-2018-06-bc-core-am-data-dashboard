@@ -1,68 +1,85 @@
+window.computeStudentsStats = (laboratoria) => {
+    const student = [];
+    let array2 = [];
+    let name = '';
+    let email = '';
+    let campus = '';
+    let stats = [];
+    let status = 0;
+    let completedPercentage = 0;
+    let topics = [];
+    let percentageDuration = 0;
+    let subtopics = [];
+    let type = '';
+    let duration = 0;
 
-//window.data = {
-
-const fillSelect = ()=> {
-    let link = "https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json";
-       fetch(link).then(function(datos){
-          //console.log(datos);
-        return datos.json();
-        }).then(function(data){
-        let sedes = document.getElementById('sedes')
-        for (let i = 0; i < Object.keys(data).length; i++) {
-        sedes.options[i] = new Option(Object.keys(data)[i]);
-        }
-        sedeGeneracion = sedes.selectedIndex;
-        console.log(sedeGeneracion);
-        sedes.addEventListener('change', generacion =()=> {
-        let sedeGeneracion= sedes.value;
-        let generaciones = document.getElementById('generaciones');
-        switch (sedeGeneracion) {
-
-          case 'lima':
-          for (var i = 0; i < Object.keys(data.lima.generacion).length; i++) {
-            generaciones.options[i] = new Option(Object.keys(data.lima.generacion)[i]);
-          }
-          case 'mexico':
-          for (var i = 0; i < Object.keys(data.mexico.generacion).length; i++) {
-            generaciones.options[i] = new Option(Object.keys(data.mexico.generacion)[i]);
+    for (key in laboratoria) {
+        campus = key;
+        average = 0;
+        const generations = Object.keys(laboratoria[key].generacion);
+        generations.map((generation) => {
+            generation = generation; 
+            const students = laboratoria[key].generacion[generation].estudiantes;
+            array2 = students.map((student, i, array) =>{
+                name = array[i].nombre;
+                email = array[i].correo;
+                completedPercentage = array[i].progreso.porcentajeCompletado;
+                //status =;
+                const progress = array[i].progreso;
+                console.log(progress);                
+                //array3 = progress.map((temas, j, cadena) =>{
+                    //percentageDuration = cadena[j].duracionTemaCompletado;
+                    //console.log(percentageDuration);
+                    return {
+                        'nombre' : name,
+                        'correo' : email,
+                        'sede' : campus,
+                        'generacion' : generation,
+                        stats : {
+                            'status' : status,
+                            'Pocentaje completado' : completedPercentage,
+                            topics : {
+                                //'Pocentaje completado' : completedPercentage,
+                                'Tiempo invertido' : percentageDuration + ' horas.',
+                                subtopics : {
+                                    //'Pocentaje completado' : completedPercentage,
+                                    'Tipo' : type,
+                                    'Duracion' : duration
+                                }
+                            }
+                        }
+                    }
+                //})   
+            })
+            student.push(array2)
+        })        
+    }
+    return student
 }
-          case 'santiago':
-          for (var i = 0; i < Object.keys(data.santiago.generacion).length; i++) {
-          generaciones.options[i] = new Option(Object.keys(data.santiago.generacion)[i]);
-}
-            break;
-          default:
-        }
 
-      /*  for (let i = 0; i < data.sedeGeneracion.length; i++) {
+window.computeGenerationsStats = (laboratoria) => {
 
-      }*/
-        })
-        /*for (let i = 0; i < data.sedeGeneracion.length; i++) {
-          array[i]
-        */
-        //console.log(sedes.value);
-
-
-      });
+    let campus = document.getElementById('selectede').value;
+    let generation = document.getElementById('generaciones').value;
+    count = laboratoria[campus].generacion[generation].estudiantes.length;
+    let average = 0;
+    let arr = {
+        "generation" : []
+    }
+    //console.log(count);
+    for (let i in laboratoria[campus].generacion[generation].estudiantes){
+      average += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.porcentajeCompletado);
       }
+    average = Math.round((average / count));
+    //console.log(average)
+    arr.generation.push({"campus" : campus, "generation" : generation, "average" : average, "count" : count});
+    return arr.generation[0];
+}
 
+window.sortStudents = (students, orderBy, orderDirection) =>{
 
-fillSelect();
+}
 
-//};
-//fillSelect();
+window.filterStudents = (students, search) =>{
 
-
-
-
-
-/*sedes.addEventListener("click", sede =()=> {
-let c = document.createElement("option");
-
-
-//  sedes.options[0] = new Option();
-//alert("Click");
-//Object.keys(data).length
-//7Object.keys(data)[0]
-});*/
+}
