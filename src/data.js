@@ -1,61 +1,22 @@
-window.computeStudentsStats = (laboratoria) => {
-    const student = [];
-    let array2 = [];
-    let name = '';
-    let email = '';
-    let campus = '';
-    let stats = [];
-    let status = 0;
-    let completedPercentage = 0;
-    let topics = [];
-    let percentageDuration = 0;
-    let subtopics = [];
-    let type = '';
-    let duration = 0;
 
-    for (key in laboratoria) {
-        campus = key;
-        average = 0;
-        const generations = Object.keys(laboratoria[key].generacion);
-        generations.map((generation) => {
-            generation = generation;
-            const students = laboratoria[key].generacion[generation].estudiantes;
-            array2 = students.map((student, i, array) =>{
-                name = array[i].nombre;
-                email = array[i].correo;
-                completedPercentage = array[i].progreso.porcentajeCompletado;
-                //status =;
-                const progress = array[i].progreso;
-                console.log(progress);
-                //array3 = progress.map((temas, j, cadena) =>{
-                    //percentageDuration = cadena[j].duracionTemaCompletado;
-                    //console.log(percentageDuration);
-                    return {
-                        'nombre' : name,
-                        'correo' : email,
-                        'sede' : campus,
-                        'generacion' : generation,
-                        stats : {
-                            'status' : status,
-                            'Pocentaje completado' : completedPercentage,
-                            topics : {
-                                //'Pocentaje completado' : completedPercentage,
-                                'Tiempo invertido' : percentageDuration + ' horas.',
-                                subtopics : {
-                                    //'Pocentaje completado' : completedPercentage,
-                                    'Tipo' : type,
-                                    'Duracion' : duration
-                                }
-                            }
-                        }
-                    }
-                //})
-            })
-            student.push(array2)
-        })
-    }
-    return student
+const getData = () => {
+    fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
+    .then(laboratoria => laboratoria.json())
+    .then(res => {
+      fillsede(res);
+      let sede = document.getElementById('selectede')
+      drawCampus(res);
+      drawGenerationsStats(res);
+
+
+
+
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 }
+
 getData();
 
 
@@ -147,7 +108,7 @@ window.computeGenerationsStats = (laboratoria) => {
     //console.log(count);
     for (let i in laboratoria[campus].generacion[generation].estudiantes) {
       average += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.porcentajeCompletado);
-      hours = parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.duracionPrograma);
+      hours += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.duracionPrograma);
       introduction = parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.temas["01-Introduccion-a-programacion"].porcentajeCompletado);
       variables = parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.temas["02-Variables-y-tipo-de-datos"].porcentajeCompletado);
       ux = laboratoria[campus].generacion[generation].estudiantes[i].progreso.temas["03-UX"].porcentajeCompletado;
