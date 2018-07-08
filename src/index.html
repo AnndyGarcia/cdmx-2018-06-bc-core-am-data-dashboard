@@ -25,9 +25,9 @@
   <!--  ASIDE -->
 <aside class="col-xl-2 col-2 position-left">
 <ul class="list-group">
-  <a href="#" class="list-group-item active backyellow" id="reports" onclick="menugeneration()"><i class="material-icons">trending_up</i> REPORTES</a>
+  <a href="#" class="list-group-item backyellow" id="reports" onclick="menugeneration()"><i class="material-icons">trending_up</i> REPORTES</a>
   <a href="#" class="list-group-item black" id="sedea" onclick= "menusede()" ><i class="material-icons">airplanemode_active</i> SEDES</a>
-  <a href="#" class="list-group-item black" id="laboratorians" ><i class="material-icons">account_circle</i> LABORATORIANS</a>
+  <a href="#" class="list-group-item black" id="laboratorians" onclick="menulaboratorians()" ><i class="material-icons">account_circle</i> LABORATORIANS</a>
 </ul>
   </aside>
 <!-- SEARCH CONTAINER-->
@@ -45,17 +45,13 @@
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       % De Avance
     </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text " id="porcent"></p>
-    </section>
+    <section class="card-body advanceLMS text-center" id="porcent"></section>
   </section>
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       Tiempo de Avance
     </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">3.5 h</p>
-    </section>
+    <section class="card-body advanceLMS text-center" id="hours"></section>
   </section>
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
@@ -68,31 +64,9 @@
     </section>
 
   <!-- Section de completitud general-->
-<h2 class="black">Completitud por Tipo</h2>
-<section class="row">
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Ejercicios
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">25%</p>
-    </section>
-  </section>
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Lecturas
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">50%</p>
-    </section>
-  </section>
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Quizes
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">15%</p>
-    </section>
+<h2 class="black">Completitud por Tema</h2>
+<section class="row" id="theme">
+
   </section>
     </section>
   </section>
