@@ -1,4 +1,21 @@
 
+const getData = () => {
+    fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
+    .then(laboratoria => laboratoria.json())
+    .then(res => {
+      fillsede(res);
+      let sede = document.getElementById('selectede')
+      drawCampus(res);
+      drawGenerationsStats(res);
+
+
+
+
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}
 //DRAW SELECTS
 const fillsede =(data) => {
   let sedes = document.getElementById('selectede')

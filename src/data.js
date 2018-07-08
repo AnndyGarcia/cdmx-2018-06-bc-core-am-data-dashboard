@@ -1,26 +1,60 @@
+window.computeStudentsStats = (laboratoria) => {
+    const student = [];
+    let array2 = [];
+    let name = '';
+    let email = '';
+    let campus = '';
+    let stats = [];
+    let status = 0;
+    let completedPercentage = 0;
+    let topics = [];
+    let percentageDuration = 0;
+    let subtopics = [];
+    let type = '';
+    let duration = 0;
 
-
-const getData = () => {
-    fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
-    .then(laboratoria => laboratoria.json())
-    .then(res => {
-    console.log(computeStudentsStats(res));
-      fillsede(res);
-      let sede = document.getElementById('selectede')
-      drawCampus(res);
-      drawGenerationsStats(res);
-      drawsede();
-
-      //const generations = computeGenerationsStats(res);
-        //const users = computeStudentsStats(laboratoria);
-        //console.log(generations);
-        //drawCampus(generations);
-
-
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    for (key in laboratoria) {
+        campus = key;
+        average = 0;
+        const generations = Object.keys(laboratoria[key].generacion);
+        generations.map((generation) => {
+            generation = generation;
+            const students = laboratoria[key].generacion[generation].estudiantes;
+            array2 = students.map((student, i, array) =>{
+                name = array[i].nombre;
+                email = array[i].correo;
+                completedPercentage = array[i].progreso.porcentajeCompletado;
+                //status =;
+                const progress = array[i].progreso;
+                console.log(progress);
+                //array3 = progress.map((temas, j, cadena) =>{
+                    //percentageDuration = cadena[j].duracionTemaCompletado;
+                    //console.log(percentageDuration);
+                    return {
+                        'nombre' : name,
+                        'correo' : email,
+                        'sede' : campus,
+                        'generacion' : generation,
+                        stats : {
+                            'status' : status,
+                            'Pocentaje completado' : completedPercentage,
+                            topics : {
+                                //'Pocentaje completado' : completedPercentage,
+                                'Tiempo invertido' : percentageDuration + ' horas.',
+                                subtopics : {
+                                    //'Pocentaje completado' : completedPercentage,
+                                    'Tipo' : type,
+                                    'Duracion' : duration
+                                }
+                            }
+                        }
+                    }
+                //})
+            })
+            student.push(array2)
+        })
+    }
+    return student
 }
 getData();
 
@@ -127,37 +161,6 @@ arr.generation.push({"campus" : campus, "generation" : generation, "average" : a
 return arr.generation[0];
 
 }
-
-
- //termina window
-/*window.computeGenerationsStats = (laboratoria) => {
-    const generationsArray = [];
-    let array2 = [];
-    let average = 0;
-    let campus='';
-    let generation ='';
-    for (key in laboratoria) {
-        campus = key;
-        average = 0;
-        let generations = Object.keys(laboratoria[key].generacion);
-        generations.map((generation) => {
-            generation = generation;
-            const students = laboratoria[key].generacion[generation].estudiantes;
-            array2 = students.map((student, i, array) =>{
-                average += array[i].progreso.porcentajeCompletado;
-                average = Math.round(average / array.length);
-                return {
-                    'campus' : key,
-                    'generation' : generation,
-                    'average' : average,
-                    'count': array.length
-                }
-            })
-            generationsArray.push(array2)
-        })
-    }
-    return generationsArray
-} */
 
 window.sortStudents = (students, orderBy, orderDirection) =>{
 
