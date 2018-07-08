@@ -62,17 +62,17 @@ window.computeStudentsStats = (laboratoria) => {
               theme[i].percentageDuration = Math.round(progress);
               theme[i].subtopics = theme[i].subtemas;
               let subtopics = theme[i].subtopics;
-              let propiedades = Object.values(subtopics);
-              propiedades.forEach(elements => {
-                if(elements.completado === 1){
-                  elements.completedPercentage = 100;
+              let subthemes = Object.values(subtopics);
+              subthemes.forEach(sub => {
+                if(sub.completado === 1){
+                  sub.completedPercentage = 100;
                 }else{
-                  elements.completedPercentage = 0;
+                  sub.completedPercentage = 0;
                 }
                 // delete elements.completado;
-                elements.type = elements.tipo;
+                sub.type = sub.tipo;
               //delete elements.tipo;
-                 elements.duration = elements.duracionSubtema;
+                 sub.duration = sub.duracionSubtema;
               });
 
 
@@ -129,21 +129,4 @@ window.sortStudents = (students, orderBy, orderDirection) =>{
 
 window.filterStudents = (students, search) =>{
 
-}
-
-const createSubtopics =(subtemas) =>{
-  let subtopics = subtemas;
-  let propiedades = Object.values(subtopics);
-  propiedades.forEach(elements => {
-    if(elements.completado === 1){
-      elements.completedPercentage = 100;
-    }else{
-      elements.completedPercentage = 0;
-    }
-    // delete elements.completado;
-    elements.type = elements.tipo;
-  //delete elements.tipo;
-     elements.duration = elements.duracionSubtema;
-  })
-  return subtopics
 }
