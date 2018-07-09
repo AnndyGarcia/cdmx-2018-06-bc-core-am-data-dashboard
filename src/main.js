@@ -5,7 +5,7 @@ const fillsede =(data) => {
      for (let i = 0; i< Object.keys(data).length; i++) {
   sedes.options[i] = new Option(Object.keys(data)[i]);
   }
-
+sedes.selectedIndex=1;
 }
 const drawCampus =(data) => {
   let sede = document.getElementById('selectede').value;
@@ -15,7 +15,17 @@ const drawCampus =(data) => {
     generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]);
 }
 
+}
 
+const drawStudents = (data) => {
+let campus = document.getElementById('selectede').value;
+let generation = document.getElementById('generaciones').value;
+let names = document.getElementById('names');
+// console.log(Object.keys(data[campus].generacion[generation].estudiantes).length);
+for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
+  names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
+
+}
 }
 //GET DATA FETCH
 //DRAW SEDE TOP
@@ -92,11 +102,33 @@ const drawGenerationsStats =(data)=> {
         <p class="card-text ">${computeGenerationsStats(data).ux} %</p>
       </section>
     </section>`;
+    drawStudents(data);
   });
 }
+
+
+
+const drawcomputeStudentsStats =(data)=> {
+let campus = document.getElementById('selectede').value;
+let generation = document.getElementById('generaciones').value;
+let names = document.getElementById('names').value;
+let name = document.getElementById('name');
+let nombres = data[campus].generacion[generation].estudiantes;
+//console.log(Object.keys(data).length);
+for (let i = 0; i < Object.keys(nombres).length; i++) {
+  if (nombres[i].nombre == names) {
+    name.innerHTML = `Laboratorian : ${nombres[i].nombre}`;
+  }
+}
+}
+
+
+
+
 //FUNCIONALIDAD DEL ASIDE
 //Función de menu vertical de Sede
 const menusede =()=> {
+
 document.getElementById('sedes').style.display ="block";
 document.getElementById('estudents').style.display ="none";
 document.getElementById('generation').style.display ="none"
@@ -107,6 +139,8 @@ document.getElementById('laboratorians').classList.remove('backyellow');
 
 //Función de menu vertical de Reports
 const menugeneration =()=> {
+  let values = document.getElementById('values');
+
 document.getElementById('generation').style.display ="block"
 document.getElementById('values').style.display ="block"
 document.getElementById('sedes').style.display = "none";
@@ -117,9 +151,9 @@ document.getElementById('laboratorians').classList.remove('backyellow');
 }
 //Función de menu vertical de Laboratorians
 const menulaboratorians =()=> {
-
-document.getElementById('sedes').style.display = "none";
 document.getElementById('estudents').style.display ="block";
+document.getElementById('sedes').style.display = "none";
+
 document.getElementById('generation').style.display ="block"
 document.getElementById('values').style.display ="none"
 document.getElementById('laboratorians').classList.add('backyellow');

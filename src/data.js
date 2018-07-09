@@ -6,10 +6,10 @@ const getData = () => {
       fillsede(res);
       let sede = document.getElementById('selectede')
       drawCampus(res);
+      drawStudents(res);
       drawGenerationsStats(res);
-
-
-
+      menugeneration();
+      drawcomputeStudentsStats(res);
 
     })
     .catch((error) => {
@@ -17,8 +17,7 @@ const getData = () => {
     });
 }
 
-getData();
-
+window.onload = getData();
 
 window.computeStudentsStats = (laboratoria) => {
   let objectdata = [];

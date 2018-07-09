@@ -33,7 +33,12 @@
 <!-- SEARCH CONTAINER-->
 <section class="col-xl-9 col-9 border position-right " id="generation">
   <article class="input-group-prepend col-4"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
-  <select id="generaciones" class="custom-select"></select>
+  <select id="generaciones" class="custom-select col-6"></select>
+  <section class="col-8">
+
+  </section>
+  <label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Laboratorian</label>
+  <select id="names" class="custom-select col-6"></select>
   </article>
 <div id="values">
 
@@ -67,20 +72,10 @@
 <h2 class="black">Completitud por Tema</h2>
 <section class="row" id="theme"></section>
 </div>
-  </section>
-
-<section class="col-xl-9 col-9 col-10 position-right" id="sedes">
-<article class="input-group-prepend col-8"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
-</article>
-</section>
-
-
   <!-- Section de lABORATORIANSl-->
-  <section class="col-xl-9 col-10 border position-right" id="estudents">
-  <label class="col-5 offset-3 position-right bold" id="count"></label>
-  <!-- Section de completitud general-->
+  <section class="col-xl-12 col-12 border position-right" id="estudents">
+  <label class="col-5 offset-3 position-right bold" id="name"></label>
   <h2 class="black">Completitud general LMS</h2>
-
   <section class="row altu">
     <section class="col-4 ground">
       <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
@@ -103,12 +98,19 @@
       </section>
     </section>
       </section>
-
     <!-- Section de completitud general-->
   <h2 class="black">Completitud por Tema</h2>
   <section class="row" id="theme"></section>
-      </section>
+  <!-- Section de completitud general-->
+
           </section>
+
+        </section>
+
+        <section class="col-xl-9 col-9 col-10 position-right" id="sedes">
+        <article class="input-group-prepend col-8"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
+        </article>
+        </section>
     <script src="main.js"></script>
     <script src="data.js"></script>
   </div>
