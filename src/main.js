@@ -10,6 +10,7 @@ const fillsede =(data) => {
 const drawCampus =(data) => {
   let sede = document.getElementById('selectede').value;
   let generation = document.getElementById('generaciones');
+  let generationStudent = document.getElementById('generacionesStudent');
   for (let i = 0; i< Object.keys(data[sede].generacion).length; i++) {
     generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]);
 }
@@ -97,23 +98,30 @@ const drawGenerationsStats =(data)=> {
 //Función de menu vertical de Sede
 const menusede =()=> {
 document.getElementById('sedes').style.display ="block";
-document.getElementById('generation').style.display = "none";
+document.getElementById('estudents').style.display ="none";
+document.getElementById('generation').style.display ="none"
 document.getElementById('sedea').classList.add('backyellow');
 document.getElementById('reports').classList.remove('backyellow');
 document.getElementById('laboratorians').classList.remove('backyellow');
 }
+
 //Función de menu vertical de Reports
 const menugeneration =()=> {
-document.getElementById('generation').style.display ="block";
+document.getElementById('generation').style.display ="block"
+document.getElementById('values').style.display ="block"
 document.getElementById('sedes').style.display = "none";
+document.getElementById('estudents').style.display ="none";
 document.getElementById('reports').classList.add('backyellow');
 document.getElementById('sedea').classList.remove('backyellow');
 document.getElementById('laboratorians').classList.remove('backyellow');
 }
 //Función de menu vertical de Laboratorians
 const menulaboratorians =()=> {
-document.getElementById('generation').style.display ="none";
+
 document.getElementById('sedes').style.display = "none";
+document.getElementById('estudents').style.display ="block";
+document.getElementById('generation').style.display ="block"
+document.getElementById('values').style.display ="none"
 document.getElementById('laboratorians').classList.add('backyellow');
 document.getElementById('reports').classList.remove('backyellow');
 document.getElementById('sedea').classList.remove('backyellow');

@@ -23,23 +23,24 @@
   </header>
   <section class="row">
   <!--  ASIDE -->
-<aside class="col-xl-2 col-2 position-left">
+<aside class="col-xl-2 col-2 position-left allscreen">
 <ul class="list-group">
   <a href="#" class="list-group-item backyellow" id="reports" onclick="menugeneration()"><i class="material-icons">trending_up</i> REPORTES</a>
-  <a href="#" class="list-group-item black" id="sedea" onclick= "menusede()" ><i class="material-icons">airplanemode_active</i> SEDES</a>
+  <a href="#" class="list-group-item                                                                                                                                        black" id="sedea" onclick= "menusede()" ><i class="material-icons">airplanemode_active</i> SEDES</a>
   <a href="#" class="list-group-item black" id="laboratorians" onclick="menulaboratorians()" ><i class="material-icons">account_circle</i> LABORATORIANS</a>
 </ul>
   </aside>
 <!-- SEARCH CONTAINER-->
-<section class="col-xl-9 col-10 border position-right" id="generation">
-<article class="input-group-prepend col-6"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
-<select id="generaciones" class="custom-select"></select>
-</article>
-<label class="col-5 offset-3 position-right bold" id="count"></label>
+<section class="col-xl-9 col-9 border position-right " id="generation">
+  <article class="input-group-prepend col-4"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
+  <select id="generaciones" class="custom-select"></select>
+  </article>
+<div id="values">
 
 <!-- Section de completitud general-->
-<h2 class="black">Completitud general LMS</h2>
 
+<label class="col-5 offset-3 position-right bold" id="count"></label>
+<h2 class="black">Completitud general LMS</h2>
 <section class="row altu">
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
@@ -62,19 +63,52 @@
     </section>
   </section>
     </section>
-
   <!-- Section de completitud general-->
 <h2 class="black">Completitud por Tema</h2>
-<section class="row" id="theme">
+<section class="row" id="theme"></section>
+</div>
+  </section>
 
-  </section>
+<section class="col-xl-9 col-9 col-10 position-right" id="sedes">
+<article class="input-group-prepend col-8"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
+</article>
+</section>
+
+
+  <!-- Section de lABORATORIANSl-->
+  <section class="col-xl-9 col-10 border position-right" id="estudents">
+  <label class="col-5 offset-3 position-right bold" id="count"></label>
+  <!-- Section de completitud general-->
+  <h2 class="black">Completitud general LMS</h2>
+
+  <section class="row altu">
+    <section class="col-4 ground">
+      <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
+        % De Avance
+      </h5>
+      <section class="card-body advanceLMS text-center" id="porcent"></section>
     </section>
-  </section>
-</section>
-  <section class="col-xl-9 col-10 position-right" id="sedes">
-  <article class="input-group-prepend col-6"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
-  </article>
-</section>
+    <section class="col-4 ground">
+      <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
+        Tiempo de Avance
+      </h5>
+      <section class="card-body advanceLMS text-center" id="hours"></section>
+    </section>
+    <section class="col-4 ground">
+      <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
+        Gráfica de Completitud
+      </h5>
+      <section class="card-body advanceLMS text-center">
+        <p class="card-text "></p>
+      </section>
+    </section>
+      </section>
+
+    <!-- Section de completitud general-->
+  <h2 class="black">Completitud por Tema</h2>
+  <section class="row" id="theme"></section>
+      </section>
+          </section>
     <script src="main.js"></script>
     <script src="data.js"></script>
   </div>
