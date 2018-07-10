@@ -7,17 +7,20 @@ const fillsede =(data) => {
   }
 sedes.selectedIndex=1;
 }
+
+
 const drawCampus =(data) => {
+
   let sede = document.getElementById('selectede').value;
   let generation = document.getElementById('generaciones');
   let generationStudent = document.getElementById('generacionesStudent');
   for (let i = 0; i< Object.keys(data[sede].generacion).length; i++) {
     generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]);
 }
-
 }
 
 const drawStudents = (data) => {
+  
 let campus = document.getElementById('selectede').value;
 let generation = document.getElementById('generaciones').value;
 let names = document.getElementById('names');
@@ -26,9 +29,8 @@ for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes
   names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
 
 }
-
-
 }
+
 //GET DATA FETCH
 //DRAW SEDE TOP
 
@@ -77,7 +79,10 @@ const drawGenerationsStats =(data)=> {
         <p class="card-text ">${computeGenerationsStats(data).ux} % </p>
       </section>
     </section>`;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
   gene.addEventListener('change', generacion =()=> {
   count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
   porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;  hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
@@ -109,6 +114,24 @@ const drawGenerationsStats =(data)=> {
   });
 }
 
+<<<<<<< HEAD
+=======
+
+
+const drawcomputeStudentsStats =(data)=> {
+let campus = document.getElementById('selectede').value;
+let generation = document.getElementById('generaciones').value;
+let names = document.getElementById('names').value;
+let name = document.getElementById('name');
+let nombres = data[campus].generacion[generation].estudiantes;
+//console.log(Object.keys(data).length);
+for (let i = 0; i < Object.keys(nombres).length; i++) {
+  if (nombres[i].nombre == names) {
+    name.innerHTML = `Laboratorian : ${nombres[i].nombre}`;
+  }
+}
+}
+>>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
 
 
 const drawcomputeStudentsStats =(data)=> {
