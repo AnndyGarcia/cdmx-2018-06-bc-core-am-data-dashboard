@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title class="bold">Data Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mobile.css" />
-  <!--Implementacion de bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-</head>
-
-<body>
-  <section class="container-fluid">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--Implementacion de bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Catamaran|Exo+2|Fauna+One|Magra|Quattrocento+Sans|Work+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+  <div class="container-fluid">
   <header class="row backyellow">
     <h1>Data Dashboard</h1>
     <section class="col-1 offset-11 bold">
@@ -37,13 +35,14 @@
   <article class="input-group-prepend col-4"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
   <select id="generaciones" class="custom-select col-6"></select>
   <section class="col-8">
-
   </section>
   <label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Laboratorian</label>
   <select id="names" class="custom-select col-6"></select>
   </article>
 <div id="values">
+
 <!-- Section de completitud general-->
+
 <label class="col-5 offset-3 position-right bold" id="count"></label>
 <h2 class="black">Completitud general LMS</h2>
 <section class="row altu">
@@ -75,17 +74,14 @@
   <!-- Section de lABORATORIANSl-->
   <section class="col-xl-12 col-12 border position-right" id="estudents">
     <label class="col-5 offset-3 position-right bold" id="name"></label>
-
   </section>
   </section>
         <section class="col-xl-9 col-9 col-10 position-right" id="sedes">
         <article class="input-group-prepend col-8"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
         </article>
         </section>
-
-</section>
-</section>
-<script src="main.js"></script>
-<script src="data.js"></script>
-</body>
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+  </div>
+  </body>
 </html>
