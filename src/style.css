@@ -1,7 +1,7 @@
 #sedes {
   display: none;
 }
-<<<<<<< HEAD
+
 #estudents {
   display: none;
 }
@@ -9,13 +9,8 @@
 body {
   font-family: 'Advent Pro', sans-serif;
 background-color: #f1eeea !important;
-=======
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background: gray;
 
->>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
 }
 
 header {
