@@ -16,46 +16,48 @@
   <div class="container-fluid">
   <header class="row backyellow">
     <h1>Data Dashboard</h1>
-    <section class="col-1 offset-11">
+    <section class="col-1 offset-11 bold">
     Hola Lucile <br>
-    Sede CDMX
+    <p id="sededrawn">Sede mexico </p>
   </section>
   </header>
   <section class="row">
   <!--  ASIDE -->
-<aside class="col-xl-2 col-2 position-left">
+<aside class="col-xl-2 col-2 position-left allscreen">
 <ul class="list-group">
-  <a href="#" class="list-group-item active backyellow" id="reports"><i class="material-icons">trending_up</i> REPORTES</a>
-  <a href="#" class="list-group-item black" id="sedea" onclick="generation()" ><i class="material-icons">airplanemode_active</i> SEDES</a>
-  <a href="#" class="list-group-item black" id="laboratorians"><i class="material-icons">account_circle</i> LABORATORIANS</a>
+  <a href="#" class="list-group-item backyellow" id="reports" onclick="menugeneration()"><i class="material-icons">trending_up</i> REPORTES</a>
+  <a href="#" class="list-group-item                                                                                                                                        black" id="sedea" onclick= "menusede()" ><i class="material-icons">airplanemode_active</i> SEDES</a>
+  <a href="#" class="list-group-item black" id="laboratorians" onclick="menulaboratorians()" ><i class="material-icons">account_circle</i> LABORATORIANS</a>
 </ul>
   </aside>
 <!-- SEARCH CONTAINER-->
-<section class="col-xl-9 col-10 border position-right" id="generation">
-<article class="input-group-prepend col-6"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
-<select id="generaciones" class="custom-select"></select>
-</article>
-<label class="col-5 offset-3 position-right bold">Total Laboratorians 15</label>
+<section class="col-xl-9 col-9 border position-right " id="generation">
+  <article class="input-group-prepend col-4"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Generacion</label>
+  <select id="generaciones" class="custom-select col-6"></select>
+  <section class="col-8">
+
+  </section>
+  <label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Laboratorian</label>
+  <select id="names" class="custom-select col-6"></select>
+  </article>
+<div id="values">
 
 <!-- Section de completitud general-->
-<h2 class="black">Completitud general LMS</h2>
 
+<label class="col-5 offset-3 position-right bold" id="count"></label>
+<h2 class="black">Completitud general LMS</h2>
 <section class="row altu">
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       % De Avance
     </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">50 %</p>
-    </section>
+    <section class="card-body advanceLMS text-center" id="porcent"></section>
   </section>
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       Tiempo de Avance
     </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">3.5 h</p>
-    </section>
+    <section class="card-body advanceLMS text-center" id="hours"></section>
   </section>
   <section class="col-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
@@ -66,41 +68,20 @@
     </section>
   </section>
     </section>
-
   <!-- Section de completitud general-->
-<h2 class="black">Completitud por Tipo</h2>
-<section class="row">
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Ejercicios
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">25%</p>
-    </section>
+<h2 class="black">Completitud por Tema</h2>
+<section class="row" id="theme"></section>
+</div>
+  <!-- Section de lABORATORIANSl-->
+  <section class="col-xl-12 col-12 border position-right" id="estudents">
+    <label class="col-5 offset-3 position-right bold" id="name"></label>
+
   </section>
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Lecturas
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">50%</p>
-    </section>
   </section>
-  <section class="col-4 ground">
-    <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
-      Quizes
-    </h5>
-    <section class="card-body advanceLMS text-center">
-      <p class="card-text ">15%</p>
-    </section>
-  </section>
-    </section>
-  </section>
-</section>
-  <section class="col-xl-9 col-10 position-right" id="sedes">
-  <article class="input-group-prepend col-6"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
-  </article>
-</section>
+        <section class="col-xl-9 col-9 col-10 position-right" id="sedes">
+        <article class="input-group-prepend col-8"><label class="subtitulo input-group-text pink white" for="inputGroupSelect01">Sede </label> <select class="form-control col-6 custom-select" id="selectede"></select>
+        </article>
+        </section>
     <script src="main.js"></script>
     <script src="data.js"></script>
   </div>
