@@ -1,4 +1,3 @@
-
 //DRAW SELECTS
 const fillsede =(data) => {
   let sedes = document.getElementById('selectede')
@@ -7,17 +6,20 @@ const fillsede =(data) => {
   }
 sedes.selectedIndex=1;
 }
+
+
 const drawCampus =(data) => {
+
   let sede = document.getElementById('selectede').value;
   let generation = document.getElementById('generaciones');
   let generationStudent = document.getElementById('generacionesStudent');
   for (let i = 0; i< Object.keys(data[sede].generacion).length; i++) {
     generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]);
 }
-
 }
 
 const drawStudents = (data) => {
+  
 let campus = document.getElementById('selectede').value;
 let generation = document.getElementById('generaciones').value;
 let names = document.getElementById('names');
@@ -41,8 +43,6 @@ drawsede.innerHTML = "Sede "+ sede.value;
 
 });
 }
-
-
 
 const drawGenerationsStats =(data)=> {
   let count = document.getElementById('count');
@@ -109,8 +109,6 @@ const drawGenerationsStats =(data)=> {
   });
 }
 
-
-
 const drawcomputeStudentsStats =(data)=> {
 
   let campus = document.getElementById('selectede').value;
@@ -126,8 +124,8 @@ laboratorian.addEventListener('change', move = () => {
   names = document.getElementById('names').value;
 //console.log(names);
 //TO DEPLOY DATA ComputeStudentsStats
-  let laboratorians = Object.values(data);
-for (var i = 0; i < (laboratorians).length; i++) {
+let laboratorians = Object.values(data);
+for (let i = 0; i < (laboratorians).length; i++) {
 //DRAW DATA BY STUDENTS
 if (laboratorians[i].campus == campus && laboratorians [i].name == names && laboratorians[i].generation == generation){
   name.innerHTML = `
@@ -185,12 +183,10 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
 
   }
 }
-
 //console.log(Object.keys(data).length);
 
 });
 }
-
 
 //FUNCIONALIDAD DEL ASIDE
 //Función de menu vertical de Sede
@@ -226,5 +222,4 @@ document.getElementById('values').style.display ="none"
 document.getElementById('laboratorians').classList.add('backyellow');
 document.getElementById('reports').classList.remove('backyellow');
 document.getElementById('sedea').classList.remove('backyellow');
-
 }

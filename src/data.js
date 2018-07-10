@@ -1,4 +1,3 @@
-
 const getData = () => {
     fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
     .then(laboratoria => laboratoria.json())
@@ -49,7 +48,8 @@ window.computeStudentsStats = (laboratoria) => {
             status = "Alta";
           } else {
             status = "Media";
-          }
+        }
+
           const themes = Object.getOwnPropertyNames(student.progreso.temas);
 
           //let subthemes = Object.getOwnPropertyNames(student.progreso.temas.subtemas);

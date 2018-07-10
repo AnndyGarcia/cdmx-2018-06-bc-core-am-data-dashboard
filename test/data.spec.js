@@ -2,6 +2,8 @@ describe('data', () => {
 
   it('debería exponer función computeStudentsStats en objeto global', () => {
     assert.isFunction(computeStudentsStats);
+//Que la función se ejecute en cualquier lado del proyecto
+
   });
 
   it('debería exponer función computeGenerationsStats en objeto global', () => {
@@ -18,7 +20,11 @@ describe('data', () => {
 
   describe('computeStudentsStats(laboratoria)', () => {
 
+<<<<<<< HEAD
+//Borre el    const { laboratoria } = fixtures;
+=======
     // se modificó const { laboratoria } = fixtures;
+>>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
 
     it('debería retornar arreglo de students con propiedad campus y propiedad generation', () => {
       const processed = computeStudentsStats(fixtures);
@@ -32,6 +38,18 @@ describe('data', () => {
     it('debería retornar arreglo de students con propiedad stats', () => {
       const processed = computeStudentsStats(fixtures);
 
+<<<<<<< HEAD
+      processed.forEach( (student) => {
+        assert.ok(student.hasOwnProperty('stats'));
+        assert.isNumber(student.stats.completedPercentage);
+        assert.isObject(student.stats.topics['01-Introduccion-a-programacion']);
+        assert.isNumber(student.stats.topics['01-Introduccion-a-programacion'].completedPercentage);
+        assert.isNumber(student.stats.topics['01-Introduccion-a-programacion'].percentageDuration);
+        assert.isObject(student.stats.topics['01-Introduccion-a-programacion'].subtopics);
+        assert.isNumber(student['stats']['topics'][i]['subtopics'][i]['completedPercentage']);
+        assert.isString(student['stats']['topics'][i]['subtopics'][i]['type']);
+        assert.isNumber(student['stats']['topics'][i]['subtopics'][i]['duration']);
+=======
 
       processed.forEach( (student) => {
         assert.ok(student.hasOwnProperty('stats'));
@@ -43,6 +61,7 @@ describe('data', () => {
        assert.isNumber(student.stats.topics["01-Introduccion-a-programacion"].subtopics["00-bienvenida-orientacion"].completedPercentage);
        assert.isString(student.stats.topics["01-Introduccion-a-programacion"].subtopics["00-bienvenida-orientacion"].type);
        assert.isNumber(student.stats.topics["01-Introduccion-a-programacion"].subtopics["00-bienvenida-orientacion"].duration);
+>>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
         });
     });
 
@@ -64,10 +83,18 @@ describe('data', () => {
       {completado: 1, duracionSubtema: 55, tipo: "lectura"}`, () => {
         const topics = Object.keys(processed[0].stats.topics);
         const subTopics = Object.keys(processed[0].stats.topics[topics[0]].subtopics);
+<<<<<<< HEAD
+
+          assert.deepEqual(processed[0].stats.topics[topics[0]].subtopics[subTopics[0]], {
+            completado: 1,
+            duracionSubtema: 55,
+            tipo: "lectura"
+=======
      assert.deepEqual(processed[0].stats.topics[topics[1]].subtopics[subTopics[0]], {
        completedPercentage: 100,
        type: "lectura",
        duration: 30
+>>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
           });
       });
     });
