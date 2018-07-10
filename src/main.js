@@ -1,4 +1,3 @@
-
 //DRAW SELECTS
 const fillsede =(data) => {
   let sedes = document.getElementById('selectede')
@@ -29,8 +28,9 @@ for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes
   names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
 
 }
-}
 
+
+}
 //GET DATA FETCH
 //DRAW SEDE TOP
 
@@ -43,8 +43,6 @@ drawsede.innerHTML = "Sede "+ sede.value;
 
 });
 }
-
-
 
 const drawGenerationsStats =(data)=> {
   let count = document.getElementById('count');
@@ -79,10 +77,7 @@ const drawGenerationsStats =(data)=> {
         <p class="card-text ">${computeGenerationsStats(data).ux} % </p>
       </section>
     </section>`;
-<<<<<<< HEAD
 
-=======
->>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
   gene.addEventListener('change', generacion =()=> {
   count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
   porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;  hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
@@ -113,26 +108,6 @@ const drawGenerationsStats =(data)=> {
     drawStudents(data);
   });
 }
-
-<<<<<<< HEAD
-=======
-
-
-const drawcomputeStudentsStats =(data)=> {
-let campus = document.getElementById('selectede').value;
-let generation = document.getElementById('generaciones').value;
-let names = document.getElementById('names').value;
-let name = document.getElementById('name');
-let nombres = data[campus].generacion[generation].estudiantes;
-//console.log(Object.keys(data).length);
-for (let i = 0; i < Object.keys(nombres).length; i++) {
-  if (nombres[i].nombre == names) {
-    name.innerHTML = `Laboratorian : ${nombres[i].nombre}`;
-  }
-}
-}
->>>>>>> 26d47b55ee450e8f9bcdd525d4782ae076913eb7
-
 
 const drawcomputeStudentsStats =(data)=> {
 
@@ -208,12 +183,10 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
 
   }
 }
-
 //console.log(Object.keys(data).length);
 
 });
 }
-
 
 //FUNCIONALIDAD DEL ASIDE
 //Función de menu vertical de Sede
@@ -249,5 +222,4 @@ document.getElementById('values').style.display ="none"
 document.getElementById('laboratorians').classList.add('backyellow');
 document.getElementById('reports').classList.remove('backyellow');
 document.getElementById('sedea').classList.remove('backyellow');
-
 }
