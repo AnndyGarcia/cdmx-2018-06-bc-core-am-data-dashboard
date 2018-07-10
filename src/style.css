@@ -1,40 +1,38 @@
 #sedes {
   display: none;
 }
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background: gray;
-
+#estudents {
+  display: none;
 }
 
+body {
+  font-family: 'Advent Pro', sans-serif;
+background-color: #f1eeea !important;
+}
 header {
   background-color: gray;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  padding-left: 1em;
-  font-family: 'Bitter', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
 }
-
 h3 {
   padding: 2px;
 }
 .container-fluid {
   background-color: #f1eeea !important;
-  font-family: 'Open Sans', sans-serif;
-  height: 100%
+font-family: 'Exo 2', sans-serif;
+  height: 100vh
 }
-
 h2{
-  padding: 1em;
+  padding: 25px;
   color: #FF009E !important;
 }
+
 
 label {
   color:  #333333 !important;
 
 }
-
 .white {
   color: white !important;
 }
@@ -42,16 +40,23 @@ label {
 .altu {
       height: 35vh;
 }
-
 .allscreen {
   height: 90vh;
 }
-
 .backyellow {
   background-color: #ffc107d9 !important;
   opacity: 0.9;
   filter: alpha(opacity=60);
   color: #333333 !important;
+
+
+}
+.position-right {
+  float: right;
+  margin-right: 3px;
+}
+.desepear {
+  display: none;
 }
 
 .subtitulo {
@@ -61,22 +66,21 @@ label {
 .black {
   color: #333333 !important;
 }
-
 .ground {
   background-color: #f1eeea !important;
 }
-
 .pink {
 background-color: #FF009E !important;
 }
 
 .size-a {
-  font-size: 1em !important;
-}
+  font-size: 20px !important;
 
+}
 .bold {
-  font-size: 1.5em;
-  font-family: 'Bitter', sans-serif;
+  font-weight: bold !important;
+  font-size: 18px;
+
 }
 
 .advanceLMS {
