@@ -9,7 +9,9 @@ const getData = () => {
       drawStudents(res);
       drawGenerationsStats(res);
       menugeneration();
-      drawcomputeStudentsStats(res);
+      console.log(computeStudentsStats(res));
+      drawcomputeStudentsStats(computeStudentsStats(res));
+
 
     })
     .catch((error) => {
