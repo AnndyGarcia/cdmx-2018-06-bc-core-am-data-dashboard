@@ -1,14 +1,17 @@
+
 const getData = () => {
   fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
     .then(laboratoria => laboratoria.json())
     .then(res => {
       fillsede(res);
+      let sede = document.getElementById('selectede');
       drawCampus(res);
       drawStudents(res);
       drawGenerationsStats(res);
       menugeneration();
       console.log(computeStudentsStats(res));
       drawcomputeStudentsStats(computeStudentsStats(res));
+      statusData(computeStudentsStats(res));
     })
     .catch((error) => {
       console.log(error);
@@ -32,8 +35,8 @@ window.computeStudentsStats = (laboratoria) => {
   campus = Object.getOwnPropertyNames(laboratoria);
   generations = Object.values(laboratoria);
   generations.forEach(elements => {
-		    j = 0;
-		    let data = Object.values(elements.generacion);
+    j = 0;
+    let data = Object.values(elements.generacion);
     generacion = Object.getOwnPropertyNames(elements.generacion);
     data.forEach(students =>{
       let student = students.estudiantes;
@@ -46,7 +49,6 @@ window.computeStudentsStats = (laboratoria) => {
         } else {
           status = 'Media';
         }
-
         const themes = Object.getOwnPropertyNames(student.progreso.temas);
 
         // let subthemes = Object.getOwnPropertyNames(student.progreso.temas.subtemas);
@@ -72,9 +74,8 @@ window.computeStudentsStats = (laboratoria) => {
               // delete elements.tipo;
               sub.duration = sub.duracionSubtema;
             });
-          }
+          };
         }
-
         objectdata.push({
           'campus': campus[i],
           'generation': generacion[j],
@@ -89,9 +90,9 @@ window.computeStudentsStats = (laboratoria) => {
       });
       j++;
     });
-			 i++;
-		    });
-		      return objectdata;
+    			 i++;
+    		    });
+    		      return objectdata;
 };
 
 window.computeGenerationsStats = (laboratoria) => {
@@ -106,7 +107,7 @@ window.computeGenerationsStats = (laboratoria) => {
   let arr = {
     'generation': []
   };
-    // console.log(count);
+  // console.log(count);
   for (let i in laboratoria[campus].generacion[generation].estudiantes) {
     average += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.porcentajeCompletado);
     hours += parseInt(laboratoria[campus].generacion[generation].estudiantes[i].progreso.duracionPrograma);
@@ -134,6 +135,6 @@ window.sortStudents = (students, orderBy, orderDirection) =>{
 
 };
 
-window.filterStudents = (students, search) =>{
+window.filterStudents = (students, search) => {
 
 };

@@ -1,3 +1,9 @@
+
+
+#estudents {
+  display: none;
+}
+
 body {
   font-family: 'Advent Pro', sans-serif;
 background-color: #f1eeea !important;
@@ -89,4 +95,8 @@ background-color: #FF009E !important;
 
 .left {
     margin-left: 21.666667% !important;
+}
+
+rect {
+  fill: #f1eeea !important;
 }

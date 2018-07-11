@@ -46,7 +46,7 @@ Lo primordial que necesitan ver las TMs son los datos de generación, para checa
 después requieren ver cuantas estudiantes se encuentran activas, y su avance general.
 
 ## Prototipado
- 
+
  Después se realizaron los sketches en baja calidad (lápiz y papel),
  para poder visualizar cómo sería el ideal de nuestro sitio web.
 
@@ -77,3 +77,26 @@ Cuando tuvimos los sketches finales, le enseñamos el prototipo a Lucile, nos di
 
 ![sede-web](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/sede-web.jpg)
 ![alumnas](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/alumnas.jpg)
+
+## Feedback Aplicado
+
+Implementamos el feedback de nuestro sketching propuesto, nos comentó la TM Lucile que no requería de saturación de información, si no que esta fuera clara y consistente, por lo que se le presentó el sketching final.
+
+![pantalla-generation](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/pantalla-generation.jpg)
+
+con este prototipo obtuvimos el VoBo de parte de la TM Lucile
+
+## Visual Design
+
+Partiendo de nuesto prototipo final pensamos implementar un background para nuestro template totalmente amarillo, haciendo searching con demás usuarios concluimos que este no era agradable para la vista, siendo una herramienta de consulta pudiera incomodar a la TM al momento de realizar los analisis y toma de desiciones, por lo que sugerimos por un background más agradable y relajado.
+
+  Utilizamos la siguiente paleta de colores:
+
+![paleta-colores](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/paletacolores.jpg)
+
+Utilizamos estos colores debido a que son los colores oficiales de nuestro cliente, lo utilizamos en la mayoría del Data dashboard
+
+
+El demo final a presentar:
+
+![demo-final](https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/ux/readme-images/demo-final.jpg)
