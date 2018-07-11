@@ -42,11 +42,28 @@ Nuestra organización fue mediante el tablero Kanban, haciendo _tareas épicas_ 
 
 Posteriormente, en equipo realizamos un diagrama de flujo para definir la circulación del programa y
  así evitar *código espagueti*.
- 
+
  ![flujo-programa](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/readme-images/flujo-programa.jpg)
 
 Después de hacer la investigación de UX, empezamos a manipular la data mediante la función **fetch()** y **promises (then)**, tuvimos una
  dificultad al utilizar los datos en JSON de forma local, señalando que necesitaba utilizar un https, es decir,
  leer el .json desde un servidor. Lo solucionamos utilizando el archivo .json desde el repositorio de GitHub.
+
+## Recomendaciones para utlizar el Data Dashboaard
+
+1.- Contar con un explorador web como  Chrome, Safari, Mozilla, Edge u Opera
+2.- Tener una conexión estable de Internet esto para no tener problemas al consultar la data en el servidor Web
+3.- Al menos ser personal autorizado de Laboratoria para tener acceso a la página.
+
+## Areas de Oportunidad
+
+Proponemos algunas areas de Oportunidad:
+
+* Crear un portal de login personalizado
+* Filtrar de forma ascendente y decendente en estudiantes
+* Realizar busqueda de estudiantes por nombre
+* Mostrar de manera más gráfica la información
+
+Si quieres colaborar en este repositorio puedes dejar un Issue para feedbacks y reportes de bugs.
 
 El máster del repositorio es _Francisca_.

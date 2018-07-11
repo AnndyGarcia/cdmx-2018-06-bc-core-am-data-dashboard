@@ -1,14 +1,12 @@
-#sedes {
-  display: none;
-}
-#estudents {
-  display: none;
-}
-
 body {
   font-family: 'Advent Pro', sans-serif;
 background-color: #f1eeea !important;
+
 }
+#sedes {
+  display: none;
+}
+
 header {
   background-color: gray;
   padding-bottom: 5px;
