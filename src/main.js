@@ -1,59 +1,50 @@
-
-//DRAW SELECTS
-const fillsede =(data) => {
-  let sedes = document.getElementById('selectede')
-     for (let i = 0; i< Object.keys(data).length; i++) {
-  sedes.options[i] = new Option(Object.keys(data)[i]);
+const fillsede = (data) => { // Draw the select of the campus
+  let sedes = document.getElementById('selectede'); // Get the select that contains the campus options
+  for (let i = 0; i < Object.keys(data).length; i++) {
+    sedes.options[i] = new Option(Object.keys(data)[i]); // Create the options dynamically
   }
-sedes.selectedIndex=1;
-}
-const drawCampus =(data) => {
-  let sede = document.getElementById('selectede').value;
-  let generation = document.getElementById('generaciones');
+  sedes.selectedIndex = 1;
+};
+
+const drawCampus = (data) => { // Function that draw the campus & generations
+  let sede = document.getElementById('selectede').value; // Take the value of campus
+  let generation = document.getElementById('generaciones'); // Get the select that contains the generations options
   let generationStudent = document.getElementById('generacionesStudent');
-  for (let i = 0; i< Object.keys(data[sede].generacion).length; i++) {
-    generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]);
-}
+  for (let i = 0; i < Object.keys(data[sede].generacion).length; i++) {
+    generation.options[i] = new Option(Object.keys(data[sede].generacion)[i]); // Create the options dynamically
+  }
+};
 
-}
+const drawStudents = (data) => { // Function that draw the students
+  let campus = document.getElementById('selectede').value; // Take the value of campus
+  let generation = document.getElementById('generaciones').value; // Take the value of generation
+  let names = document.getElementById('names'); // Get the select that contains the students options
+  // console.log(Object.keys(data[campus].generacion[generation].estudiantes).length);
+  for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
+    names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre); // Create the options dynamically
+  }
+};
 
-const drawStudents = (data) => {
-let campus = document.getElementById('selectede').value;
-let generation = document.getElementById('generaciones').value;
-let names = document.getElementById('names');
-// console.log(Object.keys(data[campus].generacion[generation].estudiantes).length);
-for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
-  names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
+// GET DATA FETCH
+// DRAW SEDE TOP
+const drawsede = ()=> { // Function that changes the campus text in the head section
+  let sede = document.getElementById('selectede').value; // Take the value of campus selected
+  sede.addEventListener('change', generacion = ()=> { // Create an event when campus changes
+    let drawsede = document.getElementById('sededrawn'); // Get the element that contains the campus
+    drawsede.innerHTML = 'Sede ' + sede.value; // Change the campus static by the campus selected
+  });
+};
 
-}
-
-
-}
-//GET DATA FETCH
-//DRAW SEDE TOP
-
-const drawsede =()=> {
-let sede = document.getElementById('selectede');
-sede.addEventListener('change', generacion =()=> {
-
-let drawsede = document.getElementById('sededrawn');
-drawsede.innerHTML = "Sede "+ sede.value;
-
-});
-}
-
-
-
-const drawGenerationsStats =(data)=> {
-  let count = document.getElementById('count');
-  count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
-  let porcent = document.getElementById('porcent');
-  porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;
-  let hours = document.getElementById('hours');
-  hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
-  let gene = document.getElementById('generaciones');
-  let theme = document.getElementById('theme');
-  theme.innerHTML = `<section class='col-4 ground'>
+const drawGenerationsStats = (data)=> { // Function that draw the statistic of each generation
+  let count = document.getElementById('count'); // Get the element that contains the count of students by generation
+  count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`; // Draw the count of students dynamically
+  let porcent = document.getElementById('porcent'); // Get the element that contains the progress of each generation
+  porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`; // Draw the progress of each generation dynamically
+  let hours = document.getElementById('hours'); // Get the element that contains the time invested by generation
+  hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`; // Draw the time invested dynamically
+  let gene = document.getElementById('generaciones'); // Get the element that contains the generation
+  let theme = document.getElementById('theme'); // Get the element that contains the topics
+  theme.innerHTML = `<section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Introducción a la Programación
       </h5>
@@ -61,7 +52,7 @@ const drawGenerationsStats =(data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -69,19 +60,19 @@ const drawGenerationsStats =(data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
       <section class='card-body advanceLMS text-center'>
         <p class="card-text ">${computeGenerationsStats(data).ux} % </p>
       </section>
-    </section>`;
+    </section>`; // Draw the info of each topic by generation
 
-  gene.addEventListener('change', generacion =()=> {
-  count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
-  porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;  hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
-  theme.innerHTML = `<section class='col-4 ground'>
+  gene.addEventListener('change', generacion = ()=> { // Event that change the statistics of each generation
+    count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`; // Draw the count of student by each generation
+    porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`; hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`; // Draw the general statistics by each generation
+    theme.innerHTML = `<section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Introducción a la Programación
       </h5>
@@ -89,7 +80,7 @@ const drawGenerationsStats =(data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -97,44 +88,40 @@ const drawGenerationsStats =(data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
       <section class='card-body advanceLMS text-center'>
         <p class="card-text ">${computeGenerationsStats(data).ux} %</p>
       </section>
-    </section>`;
-    drawStudents(data);
+    </section>`; // Draw the info of topics by each generation
+    drawStudents(data); // Invoke the function that draw students
   });
-}
+};
 
 
+const drawcomputeStudentsStats = (data)=> { // Function that draw the statistics of each student
+  let campus = document.getElementById('selectede').value; // Take the value of the campus
+  let generation = document.getElementById('generaciones').value; // Take the value of the generation
+  let names = document.getElementById('names').value; // Take the value of the name of students
+  let laboratorian = document.getElementById('names'); // Get the select that conyains the options of students
+  let name = document.getElementById('estudents'); // Get the element that draw the name of students
 
-const drawcomputeStudentsStats =(data)=> {
-
-  let campus = document.getElementById('selectede').value;
-  let generation = document.getElementById('generaciones').value;
-  let names = document.getElementById('names').value;
-  let laboratorian = document.getElementById('names');
-  let name = document.getElementById('estudents');
-
-//SELECT LABORATORIAN
-laboratorian.addEventListener('change', move = () => {
-  campus = document.getElementById('selectede').value;
-  generation = document.getElementById('generaciones').value;
-  names = document.getElementById('names').value;
-//console.log(names);
-//TO DEPLOY DATA ComputeStudentsStats
-  let laboratorians = Object.values(data);
-for (var i = 0; i < (laboratorians).length; i++) {
-//DRAW DATA BY STUDENTS
-if (laboratorians[i].campus == campus && laboratorians [i].name == names && laboratorians[i].generation == generation){
-  name.innerHTML = `
+  laboratorian.addEventListener('change', move = () => { // Change the info of a student when she was selected
+    campus = document.getElementById('selectede').value; // Take the value of campus
+    generation = document.getElementById('generaciones').value; // Take the value of generation
+    names = document.getElementById('names').value; // Take the value of the name (info)
+    // console.log(names);
+    // TO DEPLOY DATA ComputeStudentsStats
+    let laboratorians = Object.values(data);
+    for (var i = 0; i < (laboratorians).length; i++) { // Through the list of students
+      if (laboratorians[i].campus === campus && laboratorians [i].name === names && laboratorians[i].generation === generation) { // Verify if the info is true by student
+        name.innerHTML = `
   <p class ='bold'>Turno ${laboratorians[i].turn}</p>
   <h2 class="black">${laboratorians[i].name}</h2>
 <section class="row">
-    <section class="col-4 ground">
+    <section class="col-sm-12 col-lg-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       Información General
     </h5>
@@ -147,7 +134,7 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
     </section>
 </section>
 
-<section class="col-4 ground">
+<section class="col-sm-12 col-lg-4 ground">
   <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
     Porcentaje Completado
   </h5>
@@ -156,7 +143,7 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
 </section>
 
 <section class="row">
-<section class='col-4 ground'>
+<section class='col-sm-12 col-lg-4 ground'>
   <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
     Introduccion a la Programación
   </h5>
@@ -164,7 +151,7 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
     <p class="card-text ">${laboratorians[i].stats.topics['01-Introduccion-a-programacion'].completedPercentage} % </p>
   </section>
   </section>
-  <section class='col-4 ground'>
+  <section class='col-sm-12 col-lg-4 ground'>
     <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
       Variables y tipos de Datos
     </h5>
@@ -172,7 +159,7 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
       <p class='card-text'>${laboratorians[i].stats.topics['02-Variables-y-tipo-de-datos'].completedPercentage} %</p>
     </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
@@ -181,50 +168,42 @@ if (laboratorians[i].campus == campus && laboratorians [i].name == names && labo
       </section>
 
 </section>
-`;
+`; // Draw all the general info of each student
+      }
+    }
+  });
+};
 
-  }
-}
+// Functcionality of the sidebar campus option
+const menusede = ()=> {
+  document.getElementById('sedes').style.display = 'block'; // Only shows the select that contains the campus options
+  document.getElementById('estudents').style.display = 'none';
+  document.getElementById('generation').style.display = 'none';
+  document.getElementById('sedea').classList.add('backyellow');
+  document.getElementById('reports').classList.remove('backyellow');
+  document.getElementById('laboratorians').classList.remove('backyellow');
+};
 
-//console.log(Object.keys(data).length);
-
-});
-}
-
-
-//FUNCIONALIDAD DEL ASIDE
-//Función de menu vertical de Sede
-const menusede =()=> {
-
-document.getElementById('sedes').style.display ="block";
-document.getElementById('estudents').style.display ="none";
-document.getElementById('generation').style.display ="none"
-document.getElementById('sedea').classList.add('backyellow');
-document.getElementById('reports').classList.remove('backyellow');
-document.getElementById('laboratorians').classList.remove('backyellow');
-}
-
-//Función de menu vertical de Reports
-const menugeneration =()=> {
+// Functcionality of the sidebar generation statistics option
+const menugeneration = ()=> {
   let values = document.getElementById('values');
 
-document.getElementById('generation').style.display ="block"
-document.getElementById('values').style.display ="block"
-document.getElementById('sedes').style.display = "none";
-document.getElementById('estudents').style.display ="none";
-document.getElementById('reports').classList.add('backyellow');
-document.getElementById('sedea').classList.remove('backyellow');
-document.getElementById('laboratorians').classList.remove('backyellow');
-}
-//Función de menu vertical de Laboratorians
-const menulaboratorians =()=> {
-document.getElementById('estudents').style.display ="block";
-document.getElementById('sedes').style.display = "none";
+  document.getElementById('generation').style.display = 'block'; // Shows the select that contains the generations options
+  document.getElementById('values').style.display = 'block'; // Shows the statistics of the generation selected
+  document.getElementById('sedes').style.display = 'none'; // Hidden the select that contains the campus options
+  document.getElementById('estudents').style.display = 'none'; // Hidden he select that contains the students options
+  document.getElementById('reports').classList.add('backyellow');
+  document.getElementById('sedea').classList.remove('backyellow');
+  document.getElementById('laboratorians').classList.remove('backyellow');
+};
 
-document.getElementById('generation').style.display ="block"
-document.getElementById('values').style.display ="none"
-document.getElementById('laboratorians').classList.add('backyellow');
-document.getElementById('reports').classList.remove('backyellow');
-document.getElementById('sedea').classList.remove('backyellow');
-
-}
+// Functcionality of the sidebar students statistics option
+const menulaboratorians = ()=> {
+  document.getElementById('estudents').style.display = 'block'; // Show the select that contains the students options
+  document.getElementById('sedes').style.display = 'none'; // Hidden the select that contains the campus options
+  document.getElementById('generation').style.display = 'block'; // Show the select that contains the generations options
+  document.getElementById('values').style.display = 'none'; // Hidden the statistics of the generation selected
+  document.getElementById('laboratorians').classList.add('backyellow');
+  document.getElementById('reports').classList.remove('backyellow');
+  document.getElementById('sedea').classList.remove('backyellow');
+};
