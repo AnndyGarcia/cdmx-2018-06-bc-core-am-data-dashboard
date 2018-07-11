@@ -1,4 +1,3 @@
-
 const getData = () => {
   fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
     .then(laboratoria => laboratoria.json())
@@ -14,7 +13,7 @@ const getData = () => {
       statusData(computeStudentsStats(res));
     })
     .catch((error) => {
-      console.log(error);
+      console.log(error); // If there is an error, it shows in console "error"
     });
 };
 

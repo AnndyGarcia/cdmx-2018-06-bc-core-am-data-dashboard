@@ -22,8 +22,18 @@ const drawStudents = (data) => {
   let names = document.getElementById('names');
   // console.log(Object.keys(data[campus].generacion[generation].estudiantes).length);
   for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
-    names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
-  };
+    names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre); // Create the options dynamically
+  }
+};
+
+// GET DATA FETCH
+// DRAW SEDE TOP
+const drawsede = ()=> { // Function that changes the campus text in the head section
+  let sede = document.getElementById('selectede').value; // Take the value of campus selected
+  sede.addEventListener('change', generacion = ()=> { // Create an event when campus changes
+    let drawsede = document.getElementById('sededrawn'); // Get the element that contains the campus
+    drawsede.innerHTML = 'Sede ' + sede.value; // Change the campus static by the campus selected
+  });
 };
 
 const drawsede = () => {
@@ -51,7 +61,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -59,15 +69,15 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
       <section class='card-body advanceLMS text-center'>
         <p class="card-text ">${computeGenerationsStats(data).ux} % </p>
       </section>
-    </section>`;
-
+    </section>`; // Draw the info of each topic by generation
+  
   gene.addEventListener('change', generacion = ()=> {
     count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
     porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;
@@ -80,7 +90,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -88,7 +98,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
@@ -137,7 +147,7 @@ const drawcomputeStudentsStats = (data)=> {
     </section>
 </section>
 
-<section class="col-4 ground">
+<section class="col-sm-12 col-lg-4 ground">
   <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
     Porcentaje Completado
   </h5>
@@ -146,7 +156,7 @@ const drawcomputeStudentsStats = (data)=> {
 </section>
 
 <section class="row">
-<section class='col-4 ground'>
+<section class='col-sm-12 col-lg-4 ground'>
   <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
     Introduccion a la Programación
   </h5>
@@ -154,7 +164,7 @@ const drawcomputeStudentsStats = (data)=> {
     <p class="card-text ">${laboratorians[i].stats.topics['01-Introduccion-a-programacion'].completedPercentage} % </p>
   </section>
   </section>
-  <section class='col-4 ground'>
+  <section class='col-sm-12 col-lg-4 ground'>
     <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
       Variables y tipos de Datos
     </h5>
@@ -162,14 +172,13 @@ const drawcomputeStudentsStats = (data)=> {
       <p class='card-text'>${laboratorians[i].stats.topics['02-Variables-y-tipo-de-datos'].completedPercentage} %</p>
     </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
       <section class='card-body advanceLMS text-center'>
         <p class="card-text ">${laboratorians[i].stats.topics['03-UX'].completedPercentage} % </p>
       </section>
-
 </section>`;
       };
     };
@@ -250,7 +259,6 @@ const menusede = () => {
   document.getElementById('reports').classList.remove('backyellow');
   document.getElementById('laboratorians').classList.remove('backyellow');
 };
-
 // Función de menu vertical de Reports
 const menugeneration = ()=> {
   let values = document.getElementById('values');
