@@ -21,20 +21,20 @@ const drawStudents = (data) => {
   let generation = document.getElementById('generaciones').value;
   let names = document.getElementById('names');
   // console.log(Object.keys(data[campus].generacion[generation].estudiantes).length);
-  for (let i = 0 ; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
+  for (let i = 0; i < Object.keys(data[campus].generacion[generation].estudiantes).length; i++) {
     names.options[i] = new Option(data[campus].generacion[generation].estudiantes[i].nombre);
   };
 };
 
 const drawsede = () => {
   let sede = document.getElementById('selectede');
-  sede.addEventListener('change', generacion = ()=> {
+  sede.addEventListener('change', generacion = () => {
     let drawsede = document.getElementById('sededrawn');
     drawsede.innerHTML = 'Sede ' + sede.value;
   });
 };
 
-const drawGenerationsStats = (data)=> {
+const drawGenerationsStats = (data) => {
   let count = document.getElementById('count');
   count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
   let porcent = document.getElementById('porcent');
@@ -43,7 +43,7 @@ const drawGenerationsStats = (data)=> {
   hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
   let gene = document.getElementById('generaciones');
   let theme = document.getElementById('theme');
-  theme.innerHTML = `<section class='col-4 ground'>
+  theme.innerHTML = `<section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Introducción a la Programación
       </h5>
@@ -51,7 +51,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -59,7 +59,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
@@ -68,11 +68,11 @@ const drawGenerationsStats = (data)=> {
       </section>
     </section>`;
 
-  gene.addEventListener('change', generacion = ()=> {
+  gene.addEventListener('change', generacion = () => {
     count.innerHTML = `Laboratorians: ${computeGenerationsStats(data).count} estudiantes`;
     porcent.innerHTML = `<p class="card-text ">${computeGenerationsStats(data).average} %</p>`;
     hours.innerHTML = `<p class= 'card-text'>${computeGenerationsStats(data).hours} h</p>`;
-    theme.innerHTML = `<section class='col-4 ground'>
+    theme.innerHTML = `<section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Introducción a la Programación
       </h5>
@@ -80,7 +80,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).introduction} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         Variables y tipos de Datos
       </h5>
@@ -88,7 +88,7 @@ const drawGenerationsStats = (data)=> {
         <p class='card-text'>${computeGenerationsStats(data).variables} %</p>
       </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
@@ -101,7 +101,7 @@ const drawGenerationsStats = (data)=> {
   });
 };
 
-const drawcomputeStudentsStats = (data)=> {
+const drawcomputeStudentsStats = (data) => {
   let campus = document.getElementById('selectede').value;
   let generation = document.getElementById('generaciones').value;
   let names = document.getElementById('names').value;
@@ -119,12 +119,12 @@ const drawcomputeStudentsStats = (data)=> {
     let laboratorians = Object.values(data);
     for (let i = 0; i < (laboratorians).length; i++) {
       // DRAW DATA BY STUDENTS
-      if (laboratorians[i].campus === campus && laboratorians [i].name === names && laboratorians[i].generation === generation) {
+      if (laboratorians[i].campus === campus && laboratorians[i].name === names && laboratorians[i].generation === generation) {
         name.innerHTML = `
   <p class ='bold'>Turno ${laboratorians[i].turn}</p>
   <h2 class="black">${laboratorians[i].name}</h2>
   <section class="row">
-    <section class="col-4 ground">
+    <section class="col-sm-12 col-md-6 col-lg-4 ground">
     <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
       Información General
     </h5>
@@ -137,7 +137,7 @@ const drawcomputeStudentsStats = (data)=> {
     </section>
 </section>
 
-<section class="col-4 ground">
+<section class="col-sm-12 col-md-6 col-lg-4 ground">
   <h5 class="card-header black size-a font-weight-bold text-center  bg-warning">
     Porcentaje Completado
   </h5>
@@ -146,7 +146,7 @@ const drawcomputeStudentsStats = (data)=> {
 </section>
 
 <section class="row">
-<section class='col-4 ground'>
+<section class='col-sm-12 col-md-6 col-lg-4 ground'>
   <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
     Introduccion a la Programación
   </h5>
@@ -154,7 +154,7 @@ const drawcomputeStudentsStats = (data)=> {
     <p class="card-text ">${laboratorians[i].stats.topics['01-Introduccion-a-programacion'].completedPercentage} % </p>
   </section>
   </section>
-  <section class='col-4 ground'>
+  <section class='col-sm-12 col-md-6 col-lg-4 ground'>
     <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
       Variables y tipos de Datos
     </h5>
@@ -162,7 +162,7 @@ const drawcomputeStudentsStats = (data)=> {
       <p class='card-text'>${laboratorians[i].stats.topics['02-Variables-y-tipo-de-datos'].completedPercentage} %</p>
     </section>
     </section>
-    <section class='col-4 ground'>
+    <section class='col-sm-12 col-md-6 col-lg-4 ground'>
       <h5 class='card-header black size-a font-weight-bold text-center  bg-warning'>
         UX
       </h5>
@@ -173,7 +173,6 @@ const drawcomputeStudentsStats = (data)=> {
 </section>`;
       };
     };
-
   });
 };
 
@@ -196,9 +195,9 @@ const statusData = (data) => {
       if (laboratorians[i].stats.status === 'Baja') {
         baja++;
       } else if (laboratorians[i].stats.status === 'Media') {
-        media ++;
+        media++;
       } else {
-        alta ++;
+        alta++;
       }
     };
   };
@@ -211,32 +210,29 @@ const statusData = (data) => {
   // Load google charts
   // Load google charts
 
-    // Draw the chart and set the chart values
+  // Draw the chart and set the chart values
   drawChart = () => {
     let data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Alta', Math.round(porcentajeA)],
-    ['Media', Math.round(porcentajeM)],
-    ['Baja', Math.round(porcentajeB)],
+      ['Task', 'Hours per Day'],
+      ['Alta', Math.round(porcentajeA)],
+      ['Media', Math.round(porcentajeM)],
+      ['Baja', Math.round(porcentajeB)],
 
-  ]);
+    ]);
 
     // Optional; add a title and set the width and height of the chart
-    let options = {'width': 400,
-'height': 200};
+    let options = {
+      'width': 250,
+      'height': 200
+    };
 
     // Display the chart inside the <div> element with id="piechart"
     var chart = new google.visualization.PieChart(document.getElementById('chart'));
     chart.draw(data, options);
   };
-  google.charts.load('current', {'packages':['corechart']});
+  google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
-
-// console.log(porcentajeb);
 };
-
-
-// console.log(Object.keys(data).length);
 
 // FUNCIONALIDAD DEL ASIDE
 // Función de menu vertical de Sede
@@ -252,7 +248,7 @@ const menusede = () => {
 };
 
 // Función de menu vertical de Reports
-const menugeneration = ()=> {
+const menugeneration = () => {
   let values = document.getElementById('values');
   document.getElementById('generation').style.display = 'block';
   document.getElementById('values').style.display = 'block';
@@ -265,7 +261,7 @@ const menugeneration = ()=> {
   document.getElementById('laboratorians').classList.remove('backyellow');
 };
 // Función de menu vertical de Laboratorians
-const menulaboratorians = ()=> {
+const menulaboratorians = () => {
   document.getElementById('lblLaboratorian').style.display = 'block';
   document.getElementById('names').style.display = 'block';
   document.getElementById('estudents').style.display = 'block';
