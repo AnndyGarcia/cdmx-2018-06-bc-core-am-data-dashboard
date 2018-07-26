@@ -49,6 +49,8 @@ Después de hacer la investigación de UX, empezamos a manipular la data mediant
  dificultad al utilizar los datos en JSON de forma local, señalando que necesitaba utilizar un https, es decir,
  leer el .json desde un servidor. Lo solucionamos utilizando el archivo .json desde el repositorio de GitHub.
 
+<<<<<<< HEAD
+=======
 ## Recomendaciones para utlizar el Data Dashboaard
 
 1.- Contar con un explorador web como  Chrome, Safari, Mozilla, Edge u Opera
@@ -66,4 +68,5 @@ Proponemos algunas areas de Oportunidad:
 
 Si quieres colaborar en este repositorio puedes dejar un Issue para feedbacks y reportes de bugs.
 
+>>>>>>> 8fa0e90861eaaf999f5047d1454adbed73628874
 El máster del repositorio es _Francisca_.
