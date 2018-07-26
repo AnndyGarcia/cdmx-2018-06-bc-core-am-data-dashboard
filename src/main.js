@@ -222,7 +222,7 @@ const statusData = (data) => {
 
     // Optional; add a title and set the width and height of the chart
     let options = {
-      'width': 300,
+      'width': 250,
       'height': 200
     };
 
