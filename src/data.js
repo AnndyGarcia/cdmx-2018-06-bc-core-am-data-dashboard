@@ -1,6 +1,6 @@
 
 const getData = () => {
-  fetch('https://alterna87.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
+  fetch('https://francisvelueta.github.io/cdmx-2018-06-bc-core-am-data-dashboard/data/laboratoria.json')
     .then(laboratoria => laboratoria.json())
     .then(res => {
       fillsede(res);
