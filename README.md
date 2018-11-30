@@ -8,6 +8,8 @@ En Laboratoria, las Training Managers (TMs) hacen un gran trabajo al analizar la
 mayor cantidad de datos posibles respecto al progreso de las estudiantes para
 apoyarlas en su aprendizaje.
 
+ ![data](https://github.com/francisvelueta/cdmx-2018-06-bc-core-am-data-dashboard/blob/master/ux/readme-images/demo-final.jpg)
+
 La principal medida de progreso de una estudiante en Laboratoria es su avance
 completando los proyectos de la [Ruta de Aprendizaje](https://docs.google.com/spreadsheets/d/1AoXQjZnZ5MTPwJPNEGDyvn5vksiOUoPr932TjAldTE4/edit#gid=536983970)
 y su desempeño en función a la [Rúbrica de Niveles Esperados](https://docs.google.com/spreadsheets/d/e/2PACX-1vSkQy1waRpQ-16sn7VogiDTy-Fz5e7OSZSYUCiHC_bkLAKYewr4L8pWJ_BG210PeULe-TjLScNQQT_x/pubhtml).
@@ -43,14 +45,11 @@ Nuestra organización fue mediante el tablero Kanban, haciendo _tareas épicas_ 
 Posteriormente, en equipo realizamos un diagrama de flujo para definir la circulación del programa y
  así evitar *código espagueti*.
 
- ![flujo-programa](https://github.com/AnndyGrs/cdmx-2018-06-bc-core-am-data-dashboard/readme-images/flujo-programa.jpg)
 
 Después de hacer la investigación de UX, empezamos a manipular la data mediante la función **fetch()** y **promises (then)**, tuvimos una
  dificultad al utilizar los datos en JSON de forma local, señalando que necesitaba utilizar un https, es decir,
  leer el .json desde un servidor. Lo solucionamos utilizando el archivo .json desde el repositorio de GitHub.
 
-<<<<<<< HEAD
-=======
 ## Recomendaciones para utlizar el Data Dashboaard
 
 1.- Contar con un explorador web como  Chrome, Safari, Mozilla, Edge u Opera
@@ -68,5 +67,4 @@ Proponemos algunas areas de Oportunidad:
 
 Si quieres colaborar en este repositorio puedes dejar un Issue para feedbacks y reportes de bugs.
 
->>>>>>> 8fa0e90861eaaf999f5047d1454adbed73628874
 El máster del repositorio es _Francisca_.
