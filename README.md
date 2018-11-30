@@ -52,9 +52,9 @@ Después de hacer la investigación de UX, empezamos a manipular la data mediant
 
 ## Recomendaciones para utlizar el Data Dashboaard
 
-1.- Contar con un explorador web como  Chrome, Safari, Mozilla, Edge u Opera
-2.- Tener una conexión estable de Internet esto para no tener problemas al consultar la data en el servidor Web
-3.- Al menos ser personal autorizado de Laboratoria para tener acceso a la página.
+1. Contar con un explorador web como  Chrome, Safari, Mozilla, Edge u Opera
+2. Tener una conexión estable de Internet esto para no tener problemas al consultar la data en el servidor Web
+3. Al menos ser personal autorizado de Laboratoria para tener acceso a la página.
 
 ## Areas de Oportunidad
 
